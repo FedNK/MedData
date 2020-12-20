@@ -1,0 +1,13 @@
+import matplotlib.pyplot as plt
+import numpy as np
+from scipy import interpolate as interpol 
+file = np.loadtxt("temp.txt")
+timevalue = np.linspace(13, 19, 7)
+plt.xlabel("time")
+plt.ylabel("temperature")
+plt.grid()
+tck = interpol.splrep(timevalue, file)
+timevalue = np.linspace(13, 19, 100)
+fileinterpol = interpol.splev(timevalue, tck)
+plt.plot(timevalue, fileinterpol)
+plt.show()

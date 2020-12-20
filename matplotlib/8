@@ -1,0 +1,6 @@
+import matplotlib.pyplot as plt
+import numpy as np
+colcount = np.linspace(0, 999, 1000)
+values = np.random.normal(3, 1, 1000)
+plt.bar(colcount, values)
+plt.show()

@@ -1,0 +1,11 @@
+import numpy as np
+values = np.array([[151, 172, 182, 182, 190, 150, 166, 167, 160, 178, 170, 188, 188, 158, 157, 150, 186, 176], 
+[50, 68, 83, 80, 92, 48, 65, 60, 50, 71, 69, 90, 92, 57, 55, 38, 89, 76]])
+average = np.mean(values, axis = 1)
+med = np.median(values, axis = 1)
+deviation = np.std(values, axis = 1)
+corr = np.corrcoef(values)
+print(average)
+print(med)
+print(deviation)
+print(corr)

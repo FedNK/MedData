@@ -1,0 +1,14 @@
+import matplotlib.pyplot as plt
+import numpy as np
+file = np.loadtxt("temp.txt")
+timevalue = np.linspace(13, 19, 7)
+plt.xlabel("time")
+plt.ylabel("temperature")
+plt.grid()
+plt.subplot(2, 1, 1)
+plt.plot(timevalue, file)
+tempdiff = 36.6 - file
+plt.subplot(2, 1, 2)
+plt.stem(timevalue, tempdiff)
+plt.plot(timevalue, tempdiff)
+plt.show()

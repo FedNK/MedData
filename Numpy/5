@@ -1,0 +1,11 @@
+import numpy as np
+#import gnuplot as gp
+values = np.linspace(0, 10, 101)
+x = np.sin(values)
+y = np.cos(values)
+sumxy = x + y
+print(x)
+print(y)
+print(sumxy)
+np.save("output", x, y, sumxy)
+#gp.gnuplot("output.npy")

@@ -1,0 +1,7 @@
+import numpy as np
+matrixA = np.random.randint(0,2,[3,3])
+matrixB = np.random.randint(0,2,[3,3])
+print(matrixA)
+print(matrixB)
+result = np.dot(matrixA, matrixB)
+print(result)

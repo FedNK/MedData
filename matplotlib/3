@@ -1,0 +1,9 @@
+import matplotlib.pyplot as plt
+import numpy as np
+file = np.loadtxt("temp.txt")
+timevalue = np.linspace(13, 19, 7)
+plt.xlabel("time")
+plt.ylabel("temperature")
+plt.grid()
+plt.plot(timevalue, file)
+plt.show()

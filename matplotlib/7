@@ -1,0 +1,12 @@
+import matplotlib.pyplot as plt
+import numpy as np
+values = np.random.normal(3, 1, 1000)
+a = 3
+b = 0
+c = 6
+plt.plot(values)
+linelength = len(values) - 1
+plt.hlines(a, 0, linelength, color="red")
+plt.hlines(b, 0, linelength, color="red")
+plt.hlines(c, 0, linelength, color="red")
+plt.show()

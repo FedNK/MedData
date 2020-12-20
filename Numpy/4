@@ -1,0 +1,7 @@
+import numpy as np
+file = np.loadtxt("input.txt")
+values = np.linspace(0, 190, 20)
+result = np.array([file, values])
+resultmax = np.argmax(result, axis = 1)
+print(result[0][resultmax[0]])
+print(result[1][resultmax[0]])

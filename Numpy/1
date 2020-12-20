@@ -1,0 +1,4 @@
+import numpy as np
+num = input()
+result = np.array(num.split())
+print(result)

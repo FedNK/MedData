@@ -1,0 +1,12 @@
+import matplotlib.pyplot as plt
+import numpy as np
+values = np.linspace(-10, 10, 201)
+valuessin = np.sin(values)
+result = valuessin / values
+plt.xlabel("t")
+plt.ylabel("sin(t)/t")
+plt.grid()
+plt.rcParams['figure.figsize'] = 5, 10
+plt.plot(values, result)
+#plt.show()
+plt.savefig("Graph1.png")

@@ -1,0 +1,5 @@
+import numpy as np
+file = np.loadtxt("input.txt")
+values = np.linspace(0, 190, 20)
+result = np.array([file, values])
+print(result)
