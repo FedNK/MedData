@@ -1,0 +1,18 @@
+import matplotlib.pyplot as plt
+from mylib import harmonic
+import scipy.fftpack as fftpack
+import numpy as np
+
+result = harmonic(120, 0.5, 0.05, 0, 0.5)
+result2 = harmonic(120, 0.5, 0.05, 0, 1)
+result3 = harmonic(120, 0.01, 0.05, 0, 1)
+harmonicsum = result[1] + result2[1] + result3[1]
+fourie = fftpack.fft(harmonicsum)
+fourie = np.where(((fourie >= 0.03) & (fourie <= 0.07)), 0, fourie)
+fouriealt = fftpack.ifft(fourie)
+plt.grid()
+plt.subplot(2, 1, 1)
+plt.plot(result[0], harmonicsum)
+plt.subplot(2, 1, 2)
+plt.plot(result[0], fouriealt)
+plt.show()

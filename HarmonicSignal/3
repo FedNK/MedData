@@ -1,0 +1,11 @@
+import matplotlib.pyplot as plt
+from mylib import harmonic
+
+dt = 1/4
+f = 3/20*10**8
+result = harmonic(60, dt, f)
+plt.xlabel("time")
+plt.ylabel("harmonic")
+plt.grid()
+plt.plot(result[0], result[1])
+plt.show()
