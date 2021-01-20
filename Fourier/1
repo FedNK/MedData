@@ -1,11 +1,9 @@
 import matplotlib.pyplot as plt
 from mylib import harmonic
-from scipy.fftpack import fft
+from scipy.fftpack import fft, fftfreq
 
 signal = harmonic(600, 0.5, 0.05)
 result = fft(signal[1])
-plt.xlabel("time")
-plt.ylabel("Fourier")
 plt.grid()
-plt.plot(signal[0], result)
+plt.plot(fftfreq(600), result)
 plt.show()

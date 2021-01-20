@@ -1,17 +1,12 @@
-import matplotlib.pyplot as plt
 import scipy.fftpack as fftpack
-from scipy import signal
 import numpy as np
-from mylib import harmonic
 
-def detrend(x, l=200, cutoff = 0.01, dt = 0.5):
-  fnyq = 1/dt/2
-  xf = signal.lfilter(signal.firwin(l/dt+1, cutoff, False, fnyq), 1, x)
-  return xf
-
-timesignal, harsignal = harmonic(120, 0.5, 0.05)
-
-xf = detrend(harsignal, len(harsignal))
-plt.grid()
-plt.plot(timesignal, xf)
-plt.show()
+def spec(dt, x):
+  n = len(x)
+  k = np.arange(n)
+  T = n/dt
+  frq = k/T
+  frq = frq[range(n/2)]
+  Y = fftpack.fft(x)/n
+  Y = Y[range(n/2)]
+  return x
